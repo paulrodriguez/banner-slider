@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+AlphaTech_Slider
+app/code/AlphaTech/Slider/etc/db_schema.xml
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="alphatech_slider_items" resource="default" engine="innodb" comment="Slider Items Table">
+    	<column xsi:type="int" name="item_id" padding="10" unsigned="true"
+        nullable="false" identity="true" comment="Item Id" />
+      <column xsi:type="int" name="slider_id" padding="10" unsigned="true"
+        nullable="false" comment="Slider Id" />
+      <column xsi:type="varchar" length="100" name="title" nullable="true"
+      	comment="Title" />
+      <column xsi:type="varchar" length="100" name="image_name" nullable="true"
+      	comment="Image name" />
+      <column xsi:type="varchar" length="100" name="image_path" nullable="true"
+      	comment="Image Path" />
+      <column xsi:type="varchar" length="150" name="link" nullable="true"
+      	comment="Link" />
+      <column xsi:type="int" name="sort_order" unsigned="true" default="0" padding="10"
+      	comment="Sort Order" />
+      <column xsi:type="timestamp" name="created_at"
+        on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time" />
+      <column xsi:type="timestamp" name="updated_at" on_update="true"
+        nullable="false" default="CURRENT_TIMESTAMP" comment="Update Time"/>
+      <!-- constraints -->
+      <constraint xsi:type="foreign"
+        referenceId="SLIDER_ITEM_SLIDER_ID_SLIDER_ID"
+        table="alpha_tech_slider_item" column="slider_id"
+        referenceTable="alphatech_slider" referenceColumn="slider_id"
+        onDelete="CASCADE"/>
+       <constraint xsi:type="primary" referenceId="PRIMARY">
+          <column name="item_id"/>
+      </constraint>
+    </table>
+    <table name="alphatech_slider" resource="default" engine="innodb" comment="Slider Table">
+        <column xsi:type="int" name="slider_id" padding="10" unsigned="true" nullable="false" identity="true"
+      		comment="Slider Id" />
+        <column xsi:type="varchar" length="100" name="title" nullable="true"
+        	comment="Title" />
+        <column xsi:type="varchar" length="100" name="identifier" nullable="true"
+        	comment="Identifier" />
+        <column xsi:type="smallint" name="store_id" padding="5" unsigned="true"
+          nullable="false" identity="false" default="0" comment="Store ID"/>
+        <column xsi:type="timestamp" name="created_at"
+          on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time" />
+        <column xsi:type="timestamp" name="updated_at" on_update="true"
+          nullable="false" default="CURRENT_TIMESTAMP" comment="Update Time"/>
+        <!-- constraints -->
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+           <column name="slider_id"/>
+       </constraint>
+       <constraint xsi:type="unique" referenceId="SLIDER_UNIQUE_IDENTIFIER">
+         <column name="identifier" />
+       </constraint>
+
+    </table>
+</schema>

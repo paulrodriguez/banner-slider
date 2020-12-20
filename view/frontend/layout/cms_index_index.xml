@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Alpha Tech.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="AlphaTech_Slider/css/main.css" />
+	</head>
+	<body>
+	<referenceContainer name="content">
+		<block class="AlphaTech\Slider\Block\Homepage" template="AlphaTech_Slider::homepage.phtml" />
+	</referenceContainer>
+	</body>
+</page>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Alpha Tech.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+    	<resources>
+    		<resource id="Magento_Backend::admin">
+    				<resource id="Magento_Backend::alphatech_modules" title="Alpha Tech Modules">
+    					<resource id="AlphaTech_Slider::sliders" title="Sliders">
+    							<resource id="AlphaTech_Slider::slider_save" title="Save Slider" />
+    							<resource id="AlphaTech_Slider::slider_delete" title="Delete Slider" />
+    							<resource id="AlphaTech_Slider::slider_edit" title="View/Edit Slider" />
+    					</resource>
+    				</resource>
+    		</resource>
+    	</resources>
+    </acl>
+</config>

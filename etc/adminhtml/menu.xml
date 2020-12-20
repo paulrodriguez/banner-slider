@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © AlphaTech
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add
+    		id="Magento_Backend::alphatech_modules"
+    		title="AlphaTech"
+    		module="Magento_Backend"
+    		sortOrder="51"
+    		resource="Magento_Backend::alpha_modules" />
+
+        <add
+        	id="AlphaTech_Slider::sliders"
+        	title="Sliders"
+        	module="AlphaTech_Slider"
+        	sortOrder="10"
+        	resource="AlphaTech_Slider::sliders"
+        	parent="Magento_Backend::alphatech_modules" />
+    </menu>
+</config>

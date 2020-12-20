@@ -1,0 +1,75 @@
+.control-icon(@dir) {
+	background-image: none !important;
+    content: "";
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    color: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    z-index: 9;
+    cursor: pointer;
+    display: block;
+    color: transparent;
+    line-height: 30px;
+    text-align: center;
+   
+    display:none;
+
+    border: 30px solid transparent;
+    border-@{dir}-color: transparent;
+    border-@{dir}-style: solid;
+    border-@{dir}-width: 30px;
+    border-@{dir}: 30px solid #333;
+    @{dir}: 0;
+}
+
+.fas-arrow(@dir) {
+	color: #ffffff;
+    font-size: 22px;
+    top: -10px;
+    @{dir}: -27px;
+    position: absolute;
+}
+
+.carousel-control-prev-icon {
+	.control-icon(left);
+
+    .fas {
+    	.fas-arrow(left);
+    }
+}
+
+.carousel-control-next-icon {
+	.control-icon(right);
+
+    .fas {
+    	.fas-arrow(right);
+    }
+}
+
+.carousel-control-prev {
+	&:hover {
+		.carousel-control-prev-icon {
+			display: block;
+
+            &:hover {
+                border-left-color: #00a9e0;
+            }
+		}
+	}
+}
+
+.carousel-control-next {
+	&:hover {
+		.carousel-control-next-icon {
+			display: block;
+
+            &:hover {
+                border-right-color: #00a9e0;
+            }
+		}
+	}
+}
